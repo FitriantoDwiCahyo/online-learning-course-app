@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/constant/theme.dart';
+
+import '../../../constant/theme.dart';
 
 AppBar buildAppBar(BuildContext context) {
   return AppBar(
@@ -12,34 +13,8 @@ AppBar buildAppBar(BuildContext context) {
       ),
     ),
     title: Text(
-      'Log in',
+      'Register',
       style: Theme.of(context).textTheme.titleMedium,
-    ),
-  );
-}
-
-Widget buildThirdPartyLogin(BuildContext context) {
-  return Container(
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        _reusableIcons('google.png'),
-        _reusableIcons('apple.png'),
-        _reusableIcons('facebook.png'),
-      ],
-    ),
-  );
-}
-
-Widget _reusableIcons(String iconName) {
-  return GestureDetector(
-    onTap: () {},
-    child: SizedBox(
-      width: 40.w,
-      height: 40.w,
-      child: Image.asset(
-        'assets/icons/$iconName',
-      ),
     ),
   );
 }
@@ -123,15 +98,3 @@ Widget buildTextField(BuildContext context, String text, IconData icon,
   );
 }
 
-Widget buildForgotButton(BuildContext context) {
-  return TextButton(
-    onPressed: () {},
-    child: Text(
-      'Forgot Password',
-      style: Theme.of(context)
-          .textTheme
-          .bodyMedium!
-          .copyWith(color: Colors.blue, decoration: TextDecoration.underline),
-    ),
-  );
-}

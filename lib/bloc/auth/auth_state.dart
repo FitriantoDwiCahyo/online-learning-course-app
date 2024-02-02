@@ -12,13 +12,13 @@ final class AuthInitial extends AuthState {}
 final class AuthLoading extends AuthState {}
 
 final class AuthSuccess extends AuthState {
-  String email;
-  String password;
+  // String email;
+  // String password;
 
-  AuthSuccess(this.email, this.password);
+  // AuthSuccess(this.email, this.password);
 
-  @override
-  List<Object> get props => [email, password];
+  // @override
+  // List<Object> get props => [email, password];
 }
 
 final class AuthError extends AuthState {

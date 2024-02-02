@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 
 /// white background
 const Color primaryBackground = Color.fromARGB(255, 255, 255, 255);
@@ -43,5 +43,26 @@ ThemeData lightMode = ThemeData(
     titleSmall: GoogleFonts.poppins(color: primaryText), // 14sp
     bodyMedium:
         GoogleFonts.poppins(color: primaryText), // font size defautl : 14sp
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: primaryElement,
+      textStyle: GoogleFonts.poppins(color: primaryElementText,fontWeight: FontWeight.bold),
+      padding: EdgeInsets.symmetric(vertical: 18.h),
+      foregroundColor: primaryElementText,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+    ),
+  ),
+  outlinedButtonTheme: OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      textStyle: GoogleFonts.poppins(color: primaryElementText,fontWeight: FontWeight.bold),
+      padding: EdgeInsets.symmetric(vertical: 18.h),
+      foregroundColor: primaryText,
+    ),
   ),
 );

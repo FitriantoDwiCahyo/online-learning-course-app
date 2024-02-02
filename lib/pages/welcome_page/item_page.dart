@@ -5,7 +5,9 @@ import 'package:shop_app/constant/theme.dart';
 import 'package:shop_app/routers/router.dart';
 
 class ItemPage extends StatelessWidget {
-  ItemPage(this.index, this.title, this.content, this.imagePath,this.pageController,{super.key});
+  ItemPage(
+      this.index, this.title, this.content, this.imagePath, this.pageController,
+      {super.key});
 
   int index;
   String title;
@@ -25,7 +27,7 @@ class ItemPage extends StatelessWidget {
         ),
         Text(
           title,
-          style:  Theme.of(context).textTheme.headlineSmall,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(
           height: 5,
@@ -34,27 +36,23 @@ class ItemPage extends StatelessWidget {
           content,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
-         SizedBox(
+        SizedBox(
           height: 24.h,
         ),
         Container(
           width: double.infinity,
           child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              backgroundColor: primaryElement
-            ),
             onPressed: () {
               if (index < 3) {
-                pageController.animateToPage(index, duration: const Duration(milliseconds: 500), curve: Curves.decelerate);
-              }else{
+                pageController.animateToPage(index,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.decelerate);
+              } else {
                 context.goNamed(Routes.signIn);
               }
             },
-            child: const Text('Next',style: TextStyle(color: primaryElementText)),
+            child:
+                Text(index == 3 ? 'Get Started' : 'Next'),
           ),
         ),
       ],
